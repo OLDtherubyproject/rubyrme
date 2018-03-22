@@ -83,7 +83,7 @@ PaletteWindow::PaletteWindow(wxWindow* parent, const TilesetContainer& tilesets)
 
 	// Setup sizers
 	wxSizer* sizer = newd wxBoxSizer(wxVERTICAL);
-	choicebook->SetMinSize(wxSize(225, 300));
+	choicebook->SetMinSize(wxSize(255, 300));
 	sizer->Add(choicebook, 1, wxEXPAND);
 	SetSizer(sizer);
 

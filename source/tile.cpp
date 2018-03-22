@@ -122,6 +122,7 @@ int Tile::size() const
 }
 
 void Tile::merge(Tile* other) {
+	if(other->isCave()) setCave(true);
 	if(other->isPZ()) setPZ(true);
 	if(other->house_id) {
 		house_id = other->house_id;

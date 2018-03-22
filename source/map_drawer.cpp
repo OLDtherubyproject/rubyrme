@@ -340,6 +340,10 @@ void MapDrawer::DrawMap()
 							} else if(options.show_special_tiles && tile->isPZ()) {
 								r /= 2;
 								b /= 2;
+							} 
+							
+							if(options.show_special_tiles && tile->isCave()) {
+								r = 2;
 							}
 							if(options.show_special_tiles && tile->getMapFlags() & TILESTATE_PVPZONE) {
 								r = r/3*2;
@@ -1299,6 +1303,9 @@ void MapDrawer::BlitCreature(int screenx, int screeny, const Creature* c, int re
 
 void MapDrawer::WriteTooltip(Item* item, std::ostringstream& stream)
 {
+	if(item == nullptr)
+		return;
+
 	const uint16_t id = item->getID();
 	if(id < 100)
 		return;
@@ -1401,7 +1408,10 @@ void MapDrawer::DrawTile(TileLocation* location)
 			r /= 2;
 			b /= 2;
 		}
-
+		
+		if(showspecial && tile->isCave()) {
+			r = 2;
+		}
 		if(showspecial && tile->getMapFlags() & TILESTATE_PVPZONE) {
 			g = r/4;
 			b = b/3*2;

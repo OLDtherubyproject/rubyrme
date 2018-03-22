@@ -32,6 +32,7 @@ enum {
 	TILESTATE_NOLOGOUT       = 0x0008,
 	TILESTATE_PVPZONE        = 0x0010,
 	TILESTATE_REFRESH        = 0x0020,
+	TILESTATE_CAVE           = 0X0040,
 	// Internal
 	TILESTATE_SELECTED  = 0x0001,
 	TILESTATE_UNIQUE    = 0x0002,
@@ -101,6 +102,16 @@ public: //Functions
 			mapflags |= TILESTATE_PROTECTIONZONE;
 		} else {
 			mapflags &= ~TILESTATE_PROTECTIONZONE;
+		}
+	}
+
+	// Cave
+	bool isCave() const { return testFlags(mapflags, TILESTATE_CAVE); }
+	void setCave(bool cave) {
+		if(cave) {
+			mapflags |= TILESTATE_CAVE;
+		} else {
+			mapflags &= ~TILESTATE_CAVE;
 		}
 	}
 

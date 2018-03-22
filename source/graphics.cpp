@@ -291,6 +291,11 @@ bool GraphicManager::loadEditorSprites()
 			loadPNGFile(no_pvp_small_png),
 			loadPNGFile(no_pvp_png)
 		);
+	sprite_space[EDITOR_SPRITE_CAVE_TOOL] =
+		newd EditorSprite(
+			loadPNGFile(cave_small_png),
+			loadPNGFile(cave_png)
+		);
 
 	sprite_space[EDITOR_SPRITE_DOOR_NORMAL] =
 		newd EditorSprite(

@@ -395,6 +395,7 @@ BEGIN_EVENT_TABLE(BrushToolPanel, PalettePanel)
 	EVT_TOGGLEBUTTON(PALETTE_TERRAIN_NOPVP_TOOL,BrushToolPanel::OnClickNOPVPBrushButton)
 	EVT_TOGGLEBUTTON(PALETTE_TERRAIN_NOLOGOUT_TOOL,BrushToolPanel::OnClickNoLogoutBrushButton)
 	EVT_TOGGLEBUTTON(PALETTE_TERRAIN_PVPZONE_TOOL,BrushToolPanel::OnClickPVPZoneBrushButton)
+	EVT_TOGGLEBUTTON(PALETTE_TERRAIN_CAVE_TOOL,BrushToolPanel::OnClickCaveBrushButton)
 END_EVENT_TABLE()
 
 BrushToolPanel::BrushToolPanel(wxWindow* parent) :
@@ -412,7 +413,8 @@ BrushToolPanel::BrushToolPanel(wxWindow* parent) :
 	pzBrushButton(nullptr),
 	nopvpBrushButton(nullptr),
 	nologBrushButton(nullptr),
-	pvpzoneBrushButton(nullptr)
+	pvpzoneBrushButton(nullptr),
+	caveBrushButton(nullptr)
 {
 	////
 }
@@ -439,7 +441,8 @@ void BrushToolPanel::InvalidateContents()
 		pzBrushButton =
 		nopvpBrushButton =
 		nologBrushButton =
-		pvpzoneBrushButton = nullptr;
+		pvpzoneBrushButton =
+		caveBrushButton = nullptr;
 
 		loaded = false;
 	}
@@ -492,6 +495,10 @@ void BrushToolPanel::LoadAllContents()
 		ASSERT(g_gui.pvp_brush);
 		sub_sizer->Add(pvpzoneBrushButton = newd BrushButton(this, g_gui.pvp_brush, RENDER_SIZE_32x32, PALETTE_TERRAIN_PVPZONE_TOOL));
 			pvpzoneBrushButton->SetToolTip("PVP Zone Tool");
+
+		ASSERT(g_gui.cave_brush);
+		sub_sizer->Add(caveBrushButton = newd BrushButton(this, g_gui.cave_brush, RENDER_SIZE_32x32, PALETTE_TERRAIN_CAVE_TOOL));
+			caveBrushButton->SetToolTip("Cave TOOL");
 
 		// New row
 		size_sizer->Add(sub_sizer);
@@ -578,6 +585,10 @@ void BrushToolPanel::LoadAllContents()
 		ASSERT(g_gui.pvp_brush);
 		sub_sizer->Add(pvpzoneBrushButton = newd BrushButton(this, g_gui.pvp_brush, RENDER_SIZE_16x16, PALETTE_TERRAIN_PVPZONE_TOOL));
 			pvpzoneBrushButton->SetToolTip("PVP Zone Tool");
+
+		ASSERT(g_gui.cave_brush);
+		sub_sizer->Add(caveBrushButton = newd BrushButton(this, g_gui.pz_brush, RENDER_SIZE_16x16, PALETTE_TERRAIN_CAVE_TOOL));
+			caveBrushButton->SetToolTip("Cave Tool");
 	}
 
 	size_sizer->Add(sub_sizer);
@@ -612,6 +623,7 @@ void BrushToolPanel::DeselectAll()
 		nopvpBrushButton->SetValue(false);
 		nologBrushButton->SetValue(false);
 		pvpzoneBrushButton->SetValue(false);
+		caveBrushButton->SetValue(false);
 	}
 }
 
@@ -641,6 +653,8 @@ Brush* BrushToolPanel::GetSelectedBrush() const
 		return g_gui.nolog_brush;
 	if(pvpzoneBrushButton->GetValue())
 		return g_gui.pvp_brush;
+	if(caveBrushButton->GetValue())
+		return g_gui.cave_brush;
 	return nullptr;
 }
 
@@ -671,6 +685,8 @@ bool BrushToolPanel::SelectBrush(const Brush* whatbrush)
 		button = nologBrushButton;
 	} else if(whatbrush == g_gui.pvp_brush) {
 		button = pvpzoneBrushButton;
+	} else if(whatbrush == g_gui.cave_brush) {
+		button = caveBrushButton;
 	}
 
 	DeselectAll();
@@ -759,6 +775,11 @@ void BrushToolPanel::OnClickPVPZoneBrushButton(wxCommandEvent& event)
 	g_gui.SelectBrush(g_gui.pvp_brush);
 }
 
+void BrushToolPanel::OnClickCaveBrushButton(wxCommandEvent& event)
+{
+	g_gui.ActivatePalette(GetParentPalette());
+	g_gui.SelectBrush(g_gui.cave_brush);
+}
 // ============================================================================
 // Brush Button
 

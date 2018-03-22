@@ -374,6 +374,7 @@ public:
 	FlagBrush* rook_brush;
 	FlagBrush* nolog_brush;
 	FlagBrush* pvp_brush;
+	FlagBrush* cave_brush;
 
 protected:
 

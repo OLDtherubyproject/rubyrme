@@ -177,6 +177,7 @@ AboutWindow::AboutWindow(wxWindow* parent) :
 #else
 	"Unsupported OS";
 #endif
+	about << "\nAdapted for: The Ruby Server version 0.1.";
 	about << "\n\n";
 
 	about << "Using " << wxVERSION_STRING << " interface\n";
