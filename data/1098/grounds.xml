@@ -666,15 +666,14 @@
 		<border align="outer" id="7"/>
 	</brush>
 	
-	<brush name="cave (alternate border)" type="ground" server_lookid="9025" z-order="5090">
+	<brush name="cave 2" type="ground" server_lookid="9025" z-order="5090">
 		<item id="9021" chance="6"/>
 		<item id="9022" chance="1"/>
 		<item id="9023" chance="1"/>
 		<item id="9024" chance="1"/>
 		<item id="9025" chance="1"/>
-		
-		<border align="outer" id="121"/>
-		<border align="outer" id="121" to="none"/>
+
+		<border align="outer" id="7"/>
 	</brush>
 	
 	<brush name="cave hole" type="ground" server_lookid="383" z-order="2000">
@@ -682,7 +681,7 @@
 		
 		<border align="outer" id="7"/>
 		<friend name="cave"/>
-		<friend name="cave (alternate border)"/>
+		<friend name="cave 2"/>
 	</brush>
 	
 	<brush name="cave ropespot" type="ground" server_lookid="384" z-order="2000">
@@ -691,7 +690,7 @@
 		<border align="outer" id="7"/>
 		<friend name="cave"/>
 		<friend name="cave hole"/>
-		<friend name="cave (alternate border)"/>
+		<friend name="cave 2"/>
 	</brush>
 	
 	<brush name="cave small hole" type="ground" server_lookid="385" z-order="2000">
@@ -701,7 +700,7 @@
 		<friend name="cave"/>
 		<friend name="cave hole"/>
 		<friend name="cave ropespot"/>
-		<friend name="cave (alternate border)"/>
+		<friend name="cave 2"/>
 	</brush>
 	
 	<brush name="cave pickhole" type="ground" server_lookid="392" z-order="2000">
@@ -712,7 +711,7 @@
 		<friend name="cave hole"/>
 		<friend name="cave ropespot"/>
 		<friend name="cave small hole"/>
-		<friend name="cave (alternate border)"/>
+		<friend name="cave 2"/>
 	</brush>
 	
 	<brush name="dry earth" type="ground" server_lookid="836" z-order="510">
@@ -902,22 +901,7 @@
 	
 	<brush name="earth" type="ground" lookid="101" z-order="10500">
 		<item id="101" chance="150"/>
-		<item id="5711" chance="1"/>
-		<item id="5712" chance="1"/>
-		<item id="5713" chance="1"/>
-		<item id="5714" chance="1"/>
-		<item id="5715" chance="1"/>
-		<item id="5716" chance="1"/>
-		<item id="5717" chance="1"/>
-		<item id="5718" chance="1"/>
-		<item id="5719" chance="1"/>
-		<item id="5720" chance="1"/>
-		<item id="5721" chance="1"/>
-		<item id="5722" chance="1"/>
-		<item id="5723" chance="1"/>
-		<item id="5724" chance="1"/>
-		<item id="5725" chance="1"/>
-		<item id="5726" chance="1"/>
+		<item id="5711" chance="16"/>
 		
 		<border align="outer" id="21"/>
 		<border align="outer" to="none" id="21"/>
@@ -1211,7 +1195,7 @@
 		<item id="601" chance="1"/>
 		
 		<border align="inner" to="cave" id="18"/>
-		<border align="inner" to="cave (alternate border)" id="18"/>
+		<border align="inner" to="cave 2" id="18"/>
 		<border align="inner" to="mountain top ground" id="30"/>
 		<friend name="sea"/>
 	</brush>
