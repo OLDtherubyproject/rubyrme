@@ -569,11 +569,11 @@ bool MainFrame::DoQuerySave(bool doclose)
 bool MainFrame::DoQueryImportCreatures()
 {
 	if(g_creatures.hasMissing()) {
-		int ret = g_gui.PopupDialog("Missing creatures", "There are missing creatures and/or NPC in the editor, do you want to load them from an OT monster/npc file?", wxYES | wxNO);
+		int ret = g_gui.PopupDialog("Missing creatures", "There are missing creatures and/or NPC in the editor, do you want to load them from an OT pokemon/npc file?", wxYES | wxNO);
 		if(ret == wxID_YES) {
 			do
 			{
-				wxFileDialog dlg(g_gui.root, "Import monster/npc file", "","","*.xml", wxFD_OPEN | wxFD_MULTIPLE | wxFD_FILE_MUST_EXIST);
+				wxFileDialog dlg(g_gui.root, "Import pokemon/npc file", "","","*.xml", wxFD_OPEN | wxFD_MULTIPLE | wxFD_FILE_MUST_EXIST);
 				if(dlg.ShowModal() == wxID_OK) {
 					wxArrayString paths;
 					dlg.GetPaths(paths);
@@ -582,7 +582,7 @@ bool MainFrame::DoQueryImportCreatures()
 						wxArrayString warnings;
 						bool ok = g_creatures.importXMLFromOT(FileName(paths[i]), error, warnings);
 						if(ok)
-							g_gui.ListDialog("Monster loader errors", warnings);
+							g_gui.ListDialog("Pokemon loader errors", warnings);
 						else
 							wxMessageBox("Error OT data file \"" + paths[i] + "\".\n" + error, "Error", wxOK | wxICON_INFORMATION, g_gui.root);
 					}

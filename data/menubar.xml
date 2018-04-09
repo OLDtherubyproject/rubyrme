@@ -10,7 +10,7 @@
         <separator/>
         <menu name="$Import">
             <item name="$Import Map..." action="IMPORT_MAP" help="Import map data from another map file."/>
-            <item name="Import $Monsters/NPC..." action="IMPORT_MONSTERS" help="Import etiher a monsters.xml file or a specific monster/NPC."/>
+            <item name="Import $Pokemons/NPC..." action="IMPORT_POKEMONS" help="Import etiher a pokemons.xml file or a specific pokemon/NPC."/>
             <item name="Import Mi$nimap..." action="IMPORT_MINIMAP" help="Import map data from a .bmp file."/>
         </menu>
         <menu name="$Export">
@@ -82,7 +82,7 @@
     <menu name="$Map">
         <item name="Edit $Towns" hotkey="Ctrl+T" action="EDIT_TOWNS" help="Edit towns."/>
         <item name="Edit $Items" hotkey="Ctrl+I" action="EDIT_ITEMS" help="Edit items."/>
-        <item name="Edit $Monsters" action="EDIT_MONSTERS" help="Edit monsters."/>
+        <item name="Edit $Pokemons" action="EDIT_POKEMONS" help="Edit pokemons."/>
         <separator/>
         <item name="$Cleanup..." action="MAP_CLEANUP" help="Removes all unknown items from the map."/>
         <item name="$Properties..." hotkey="Ctrl+P" action="MAP_PROPERTIES" help="Show and change the map properties."/>

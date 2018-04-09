@@ -35,7 +35,7 @@ namespace MenuBar
 		GENERATE_MAP,
 		CLOSE,
 		IMPORT_MAP,
-		IMPORT_MONSTERS,
+		IMPORT_POKEMONS,
 		IMPORT_MINIMAP,
 		EXPORT_MINIMAP,
 		RELOAD_DATA,
@@ -76,7 +76,7 @@ namespace MenuBar
 		PASTE,
 		EDIT_TOWNS,
 		EDIT_ITEMS,
-		EDIT_MONSTERS,
+		EDIT_POKEMONS,
 		MAP_CLEANUP,
 		MAP_REMOVE_ITEMS,
 		MAP_REMOVE_CORPSES,
@@ -182,7 +182,7 @@ public:
 	// Import Menu
 	// Export Menu
 	void OnImportMap(wxCommandEvent& event);
-	void OnImportMonsterData(wxCommandEvent& event);
+	void OnImportPokemonData(wxCommandEvent& event);
 	void OnImportMinimap(wxCommandEvent& event);
 	void OnExportMinimap(wxCommandEvent& event);
 	void OnReloadDataFiles(wxCommandEvent& event);
@@ -224,7 +224,7 @@ public:
 	// Map menu
 	void OnMapEditTowns(wxCommandEvent& event);
 	void OnMapEditItems(wxCommandEvent& event);
-	void OnMapEditMonsters(wxCommandEvent& event);
+	void OnMapEditPokemons(wxCommandEvent& event);
 	void OnMapCleanHouseItems(wxCommandEvent& event);
 	void OnMapCleanup(wxCommandEvent& event);
 	void OnMapProperties(wxCommandEvent& event);

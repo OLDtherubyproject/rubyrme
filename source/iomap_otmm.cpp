@@ -579,7 +579,7 @@ bool IOMapOTMM::loadMap(Map& map, NodeFileReadHandle& f, const FileName& identif
 						}
 						bool isNPC;
 						std::string name;
-						uint32_t spawntime = 0; // Only applicable for monsters
+						uint32_t spawntime = 0; // Only applicable for pokemons
 
 						if(creature_type == OTMM_NPC) {
 							isNPC = true;
@@ -587,14 +587,14 @@ bool IOMapOTMM::loadMap(Map& map, NodeFileReadHandle& f, const FileName& identif
 								warning("Could not read name of NPC.");
 								return false;
 							}
-						} else if(creature_type == OTMM_MONSTER) {
+						} else if(creature_type == OTMM_POKEMON) {
 							isNPC = false;
 							if(!creatureNode->getString(name)) {
-								warning("Could not read name of monster.");
+								warning("Could not read name of pokemon.");
 								return false;
 							}
 							if(!creatureNode->getU32(spawntime)) {
-								warning("Could not read spawn time of monster.");
+								warning("Could not read spawn time of pokemon.");
 								return false;
 							}
 						} else {
@@ -912,13 +912,13 @@ bool IOMapOTMM::saveMap(Map& map, NodeFileWriteHandle& f, const FileName& identi
 												f.addU8(creature_tile->getZ() & 0xf);
 											} f.endNode(); // OTMM_NPC
 										} else {
-											f.addNode(OTMM_MONSTER); {
+											f.addNode(OTMM_POKEMON); {
 												f.addString(c->getName());
 												f.addU32(c->getSpawnTime());
 												f.addU16(creature_tile->getX());
 												f.addU16(creature_tile->getY());
 												f.addU8(creature_tile->getZ() & 0xf);
-											} f.endNode(); // OTMM_MONSTER
+											} f.endNode(); // OTMM_POKEMON
 										}
 
 										// Flag as saved

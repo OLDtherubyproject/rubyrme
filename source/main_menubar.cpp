@@ -64,7 +64,7 @@ MainMenuBar::MainMenuBar(MainFrame *frame) : frame(frame)
 	MAKE_ACTION(CLOSE, wxITEM_NORMAL, OnClose);
 
 	MAKE_ACTION(IMPORT_MAP, wxITEM_NORMAL, OnImportMap);
-	MAKE_ACTION(IMPORT_MONSTERS, wxITEM_NORMAL, OnImportMonsterData);
+	MAKE_ACTION(IMPORT_POKEMONS, wxITEM_NORMAL, OnImportPokemonData);
 	MAKE_ACTION(IMPORT_MINIMAP, wxITEM_NORMAL, OnImportMinimap);
 	MAKE_ACTION(EXPORT_MINIMAP, wxITEM_NORMAL, OnExportMinimap);
 
@@ -109,7 +109,7 @@ MainMenuBar::MainMenuBar(MainFrame *frame) : frame(frame)
 
 	MAKE_ACTION(EDIT_TOWNS, wxITEM_NORMAL, OnMapEditTowns);
 	MAKE_ACTION(EDIT_ITEMS, wxITEM_NORMAL, OnMapEditItems);
-	MAKE_ACTION(EDIT_MONSTERS, wxITEM_NORMAL, OnMapEditMonsters);
+	MAKE_ACTION(EDIT_POKEMONS, wxITEM_NORMAL, OnMapEditPokemons);
 
 	MAKE_ACTION(CLEAR_INVALID_HOUSES, wxITEM_NORMAL, OnClearHouseTiles);
 	MAKE_ACTION(CLEAR_MODIFIED_STATE, wxITEM_NORMAL, OnClearModifiedState);
@@ -294,7 +294,7 @@ void MainMenuBar::Update()
 	EnableItem(GENERATE_MAP, false);
 
 	EnableItem(IMPORT_MAP, is_local);
-	EnableItem(IMPORT_MONSTERS, is_local);
+	EnableItem(IMPORT_POKEMONS, is_local);
 	EnableItem(IMPORT_MINIMAP, false);
 	EnableItem(EXPORT_MINIMAP, is_local);
 
@@ -332,7 +332,7 @@ void MainMenuBar::Update()
 
 	EnableItem(EDIT_TOWNS, is_local);
 	EnableItem(EDIT_ITEMS, false);
-	EnableItem(EDIT_MONSTERS, false);
+	EnableItem(EDIT_POKEMONS, false);
 
 	EnableItem(MAP_CLEANUP, is_local);
 	EnableItem(MAP_PROPERTIES, is_local);
@@ -735,9 +735,9 @@ void MainMenuBar::OnImportMap(wxCommandEvent& WXUNUSED(event))
 	importmap->ShowModal();
 }
 
-void MainMenuBar::OnImportMonsterData(wxCommandEvent& WXUNUSED(event))
+void MainMenuBar::OnImportPokemonData(wxCommandEvent& WXUNUSED(event))
 {
-	wxFileDialog dlg(g_gui.root, "Import monster/npc file", "","","*.xml", wxFD_OPEN | wxFD_MULTIPLE | wxFD_FILE_MUST_EXIST);
+	wxFileDialog dlg(g_gui.root, "Import pokemon/npc file", "","","*.xml", wxFD_OPEN | wxFD_MULTIPLE | wxFD_FILE_MUST_EXIST);
 	if(dlg.ShowModal() == wxID_OK) {
 		wxArrayString paths;
 		dlg.GetPaths(paths);
@@ -746,7 +746,7 @@ void MainMenuBar::OnImportMonsterData(wxCommandEvent& WXUNUSED(event))
 			wxArrayString warnings;
 			bool ok = g_creatures.importXMLFromOT(FileName(paths[i]), error, warnings);
 			if(ok)
-				g_gui.ListDialog("Monster loader errors", warnings);
+				g_gui.ListDialog("Pokemon loader errors", warnings);
 			else
 				wxMessageBox("Error OT data file \"" + paths[i] + "\".\n" + error, "Error", wxOK | wxICON_INFORMATION, g_gui.root);
 		}
@@ -1420,7 +1420,7 @@ void MainMenuBar::OnMapEditItems(wxCommandEvent& WXUNUSED(event))
 	;
 }
 
-void MainMenuBar::OnMapEditMonsters(wxCommandEvent& WXUNUSED(event))
+void MainMenuBar::OnMapEditPokemons(wxCommandEvent& WXUNUSED(event))
 {
 	;
 }

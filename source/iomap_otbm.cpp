@@ -401,7 +401,7 @@ bool Container::serializeItemNode_OTBM(const IOMap& maphandle, NodeFileWriteHand
 	|	|
 	|	|--- OTBM_SPAWNS (not implemented)
 	|	|	|--- OTBM_SPAWN_AREA (not implemented)
-	|	|	|--- OTBM_MONSTER (not implemented)
+	|	|	|--- OTBM_POKEMON (not implemented)
 	|	|
 	|	|--- OTBM_TOWNS
 	|		|--- OTBM_TOWN
@@ -990,7 +990,7 @@ bool IOMapOTBM::loadSpawns(Map& map, pugi::xml_document& doc)
 
 		for(pugi::xml_node creatureNode = spawnNode.first_child(); creatureNode; creatureNode = creatureNode.next_sibling()) {
 			const std::string& creatureNodeName = as_lower_str(creatureNode.name());
-			if(creatureNodeName != "monster" && creatureNodeName != "npc") {
+			if(creatureNodeName != "pokemon" && creatureNodeName != "npc") {
 				continue;
 			}
 
@@ -1478,7 +1478,7 @@ bool IOMapOTBM::saveSpawns(Map& map, pugi::xml_document& doc)
 				if(creature_tile) {
 					Creature* creature = creature_tile->creature;
 					if(creature && !creature->isSaved()) {
-						pugi::xml_node creatureNode = spawnNode.append_child(creature->isNpc() ? "npc" : "monster");
+						pugi::xml_node creatureNode = spawnNode.append_child(creature->isNpc() ? "npc" : "pokemon");
 
 						creatureNode.append_attribute("name") = creature->getName().c_str();
 						creatureNode.append_attribute("x") = x;

@@ -112,7 +112,7 @@ ItemDatabase::ItemDatabase() :
 	// Count of GameSprite types
 	item_count(0),
 	effect_count(0),
-	monster_count(0),
+	pokemon_count(0),
 	distance_count(0),
 
 	minclientID(0),

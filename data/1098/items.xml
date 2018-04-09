@@ -28392,8 +28392,8 @@
 		<attribute key="weight" value="300" />
 	</item>
 	<item id="21558" article="a" name="ghost pacifier" />
-	<item id="21559" article="a" name="monster nest" />
-	<item id="21560" article="a" name="destroyed monster nest">
+	<item id="21559" article="a" name="pokemon nest" />
+	<item id="21560" article="a" name="destroyed pokemon nest">
 		<attribute key="decayTo" value="21559" />
 		<attribute key="duration" value="120" />
 	</item>
@@ -29032,7 +29032,7 @@
 	<item id="22536" article="a" name="dead weight">
 		<attribute key="weight" value="750" />
 	</item>
-	<item id="22537" article="a" name="trapped bad dream monster">
+	<item id="22537" article="a" name="trapped bad dream pokemon">
 		<attribute key="weight" value="1200" />
 	</item>
 	<item id="22538" article="a" name="bowl of terror sweat">

@@ -355,7 +355,7 @@ void MapCanvas::UpdatePositionStatus(int x, int y)
 		if(tile->spawn && g_settings.getInteger(Config::SHOW_SPAWNS)) {
 			ss << "Spawn radius: " << tile->spawn->getSize();
 		} else if(tile->creature && g_settings.getInteger(Config::SHOW_CREATURES)) {
-			ss << (tile->creature->isNpc()? "NPC" : "Monster");
+			ss << (tile->creature->isNpc()? "NPC" : "Pokemon");
 			ss << " \"" << wxstr(tile->creature->getName()) << "\" spawntime: " << tile->creature->getSpawnTime();
 		} else if(Item* item = tile->getTopItem()) {
 			ss << "Item \"" << wxstr(item->getName()) << "\"";

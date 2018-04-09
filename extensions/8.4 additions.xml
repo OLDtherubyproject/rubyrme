@@ -667,7 +667,7 @@
 		</alternate>
 	</brush> 
 	
-	<brush name="monster trophy" type="doodad" server_lookid="9503" draggable="true" on_blocking="true" thickness="100/100" z-order="110">
+	<brush name="pokemon trophy" type="doodad" server_lookid="9503" draggable="true" on_blocking="true" thickness="100/100" z-order="110">
 		<alternate> -- south --
 			<item id="9503" chance="10"/>
 		</alternate>
@@ -2233,7 +2233,7 @@
 			<brush name="yalahar banner flag II" after="Wall Lamp on (Gold)"/>
 			<brush name="yalahar banner flag III" after="Wall Lamp on (Gold)"/>
 			<brush name="yalahar banner flag IV" after="Wall Lamp on (Gold)"/>
-			<brush name="monster trophy" after="Wall Lamp on (Gold)"/>
+			<brush name="pokemon trophy" after="Wall Lamp on (Gold)"/>
 			<brush name="shark trophy" after="Wall Lamp on (Gold)"/>
 			<brush name="animal trophy I" after="Wall Lamp on (Gold)"/>
 			<brush name="animal trophy II" after="Wall Lamp on (Gold)"/>

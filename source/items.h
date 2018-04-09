@@ -382,7 +382,7 @@ protected:
 	// Count of GameSprite types
 	uint16_t item_count;
 	uint16_t effect_count;
-	uint16_t monster_count;
+	uint16_t pokemon_count;
 	uint16_t distance_count;
 
 	uint16_t minclientID;

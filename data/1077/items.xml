@@ -15665,7 +15665,7 @@
 	<item id="8843" article="an" name="onion">
 		<attribute key="weight" value="140" />
 	</item>
-	<item id="8844" name="jalapeño pepper" article="a">
+	<item id="8844" name="jalapeï¿½o pepper" article="a">
 		<attribute key="weight" value="30" />
 	</item>
 	<item id="8845" article="a" name="beetroot">
@@ -17698,7 +17698,7 @@
 		<attribute key="description" value="This one would be quite healthy if it wasn't for all the melted cheese on top." />
 		<attribute key="weight" value="1100" />
 	</item>
-	<item id="9998" article="a" name="filled jalapeño peppers">
+	<item id="9998" article="a" name="filled jalapeï¿½o peppers">
 		<attribute key="description" value="The creamy cheese makes a great combination with the spicy peppers." />
 		<attribute key="weight" value="650" />
 	</item>
@@ -29350,8 +29350,8 @@
 		<attribute key="weight" value="300" />
 	</item>
 	<item id="21558" article="a" name="ghost pacifier" />
-	<item id="21559" article="a" name="monster nest" />
-	<item id="21560" article="a" name="destroyed monster nest">
+	<item id="21559" article="a" name="pokemon nest" />
+	<item id="21560" article="a" name="destroyed pokemon nest">
 		<attribute key="decayTo" value="21559" />
 		<attribute key="duration" value="120" />
 	</item>
@@ -29987,7 +29987,7 @@
 	<item id="22536" article="a" name="dead weight">
 		<attribute key="weight" value="750" />
 	</item>
-	<item id="22537" article="a" name="trapped bad dream monster">
+	<item id="22537" article="a" name="trapped bad dream pokemon">
 		<attribute key="weight" value="1200" />
 	</item>
 	<item id="22538" article="a" name="bowl of terror sweat">

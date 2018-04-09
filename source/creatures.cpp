@@ -77,7 +77,7 @@ CreatureType* CreatureType::loadFromXML(pugi::xml_node node, wxArrayString& warn
 	}
 
 	const std::string& tmpType = attribute.as_string();
-	if(tmpType != "monster" && tmpType != "npc") {
+	if(tmpType != "pokemon" && tmpType != "npc") {
 		warnings.push_back("Invalid type tag of creature node \"" + wxstr(tmpType) + "\"");
 		return nullptr;
 	}
@@ -130,12 +130,12 @@ CreatureType* CreatureType::loadFromOTXML(const FileName& filename, pugi::xml_do
 
 	bool isNpc;
 	pugi::xml_node node;
-	if((node = doc.child("monster"))) {
+	if((node = doc.child("pokemon"))) {
 		isNpc = false;
 	} else if((node = doc.child("npc"))) {
 		isNpc = true;
 	} else {
-		warnings.push_back("This file is not a monster/npc file");
+		warnings.push_back("This file is not a pokemon/npc file");
 		return nullptr;
 	}
 
@@ -298,27 +298,27 @@ bool CreatureDatabase::importXMLFromOT(const FileName& filename, wxString& error
 	}
 
 	pugi::xml_node node;
-	if((node = doc.child("monsters"))) {
-		for(pugi::xml_node monsterNode = node.first_child(); monsterNode; monsterNode = monsterNode.next_sibling()) {
-			if(as_lower_str(monsterNode.name()) != "monster") {
+	if((node = doc.child("pokemons"))) {
+		for(pugi::xml_node pokemonNode = node.first_child(); pokemonNode; pokemonNode = pokemonNode.next_sibling()) {
+			if(as_lower_str(pokemonNode.name()) != "pokemon") {
 				continue;
 			}
 
 			pugi::xml_attribute attribute;
-			if(!(attribute = monsterNode.attribute("file"))) {
+			if(!(attribute = pokemonNode.attribute("file"))) {
 				continue;
 			}
 
-			FileName monsterFile(filename);
-			monsterFile.SetFullName(wxString(attribute.as_string(), wxConvUTF8));
+			FileName pokemonFile(filename);
+			pokemonFile.SetFullName(wxString(attribute.as_string(), wxConvUTF8));
 
-			pugi::xml_document monsterDoc;
-			pugi::xml_parse_result monsterResult = monsterDoc.load_file(monsterFile.GetFullPath().mb_str());
-			if(!monsterResult) {
+			pugi::xml_document pokemonDoc;
+			pugi::xml_parse_result pokemonResult = pokemonDoc.load_file(pokemonFile.GetFullPath().mb_str());
+			if(!pokemonResult) {
 				continue;
 			}
 
-			CreatureType* creatureType = CreatureType::loadFromOTXML(monsterFile, monsterDoc, warnings);
+			CreatureType* creatureType = CreatureType::loadFromOTXML(pokemonFile, pokemonDoc, warnings);
 			if(creatureType) {
 				CreatureType* current = (*this)[creatureType->name];
 				if(current) {
@@ -343,7 +343,7 @@ bool CreatureDatabase::importXMLFromOT(const FileName& filename, wxString& error
 				}
 			}
 		}
-	} else if((node = doc.child("monster")) || (node = doc.child("npc"))) {
+	} else if((node = doc.child("pokemon")) || (node = doc.child("npc"))) {
 		CreatureType* creatureType = CreatureType::loadFromOTXML(filename, doc, warnings);
 		if(creatureType) {
 			CreatureType* current = (*this)[creatureType->name];
@@ -370,7 +370,7 @@ bool CreatureDatabase::importXMLFromOT(const FileName& filename, wxString& error
 			}
 		}
 	} else {
-		error = "This is not valid OT npc/monster data file.";
+		error = "This is not valid OT npc/pokemon data file.";
 		return false;
 	}
 	return true;
@@ -390,7 +390,7 @@ bool CreatureDatabase::saveToXML(const FileName& filename)
 			pugi::xml_node creatureNode = creatureNodes.append_child("creature");
 
 			creatureNode.append_attribute("name") = creatureType->name.c_str();
-			creatureNode.append_attribute("type") = creatureType->isNpc ? "npc" : "monster";
+			creatureNode.append_attribute("type") = creatureType->isNpc ? "npc" : "pokemon";
 
 			const Outfit& outfit = creatureType->outfit;
 			creatureNode.append_attribute("looktype") = outfit.lookType;
