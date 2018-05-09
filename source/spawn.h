@@ -24,12 +24,14 @@ class Tile;
 
 class Spawn {
 public:
-	Spawn(int size = 3) : size(0), selected(false) {setSize(size);}
+	Spawn(int size = 3) : size(0), selected(false) {setSize(size);setMinLevel(1);setMaxLevel(1);}
 	~Spawn() {}
 
 	Spawn* deepCopy() {
 		Spawn* copy = newd Spawn(size);
 		copy->selected = selected;
+		copy->minlevel = minlevel;
+		copy->maxlevel = maxlevel;
 		return copy;
 	}
 
@@ -46,8 +48,20 @@ public:
 		size = newsize;
 	}
 	int getSize() const {return size;}
+	void setMinLevel(int newminlevel) {
+		//ASSERT(newminlevel < 1000000);
+		minlevel = newminlevel;
+	}
+	int getMinLevel() const {return minlevel;}
+	void setMaxLevel(int newmaxlevel) {
+		//ASSERT(newmaxlevel < 1000000);
+		maxlevel = newmaxlevel;
+	}
+	int getMaxLevel() const {return maxlevel;}
 protected:
 	int size;
+	int minlevel;
+	int maxlevel;
 	bool selected;
 };
 

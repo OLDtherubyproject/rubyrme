@@ -375,6 +375,8 @@ OldPropertiesWindow::OldPropertiesWindow(wxWindow* win_parent, const Map* map, c
 OldPropertiesWindow::OldPropertiesWindow(wxWindow* win_parent, const Map* map, const Tile* tile_parent, Spawn* spawn, wxPoint pos) :
 	ObjectPropertiesWindowBase(win_parent, "Spawn Properties", map, tile_parent, spawn, pos),
 	count_field(nullptr),
+	minlevel_field(nullptr),
+	maxlevel_field(nullptr),
 	direction_field(nullptr),
 	action_id_field(nullptr),
 	unique_id_field(nullptr),
@@ -396,8 +398,16 @@ OldPropertiesWindow::OldPropertiesWindow(wxWindow* win_parent, const Map* map, c
 
 	subsizer->Add(newd wxStaticText(this, wxID_ANY, "Spawn size"));
 	count_field = newd wxSpinCtrl(this, wxID_ANY, i2ws(edit_spawn->getSize()), wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS, 1, g_settings.getInteger(Config::MAX_SPAWN_RADIUS), edit_spawn->getSize());
-	// count_field->SetSelection(-1, -1);
 	subsizer->Add(count_field, wxSizerFlags(1).Expand());
+
+	subsizer->Add(newd wxStaticText(this, wxID_ANY, "Min level"));
+	minlevel_field = newd wxSpinCtrl(this, wxID_ANY, i2ws(edit_spawn->getMinLevel()), wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS, 1, g_settings.getInteger(Config::MAX_SPAWN_LEVEL), edit_spawn->getMinLevel());
+	subsizer->Add(minlevel_field, wxSizerFlags(1).Expand());
+
+	subsizer->Add(newd wxStaticText(this, wxID_ANY, "Max level"));
+	maxlevel_field = newd wxSpinCtrl(this, wxID_ANY, i2ws(edit_spawn->getMaxLevel()), wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS, 1, g_settings.getInteger(Config::MAX_SPAWN_LEVEL), edit_spawn->getMaxLevel());
+	subsizer->Add(maxlevel_field, wxSizerFlags(1).Expand());
+	// count_field->SetSelection(-1, -1);
 
 	boxsizer->Add(subsizer, wxSizerFlags(1).Expand());
 
@@ -624,7 +634,12 @@ void OldPropertiesWindow::OnClickOK(wxCommandEvent& WXUNUSED(event))
 		}
 	} else if(edit_spawn) {
 		int new_spawnsize = count_field->GetValue();
+		int new_spawnminlevel = minlevel_field->GetValue();
+		int new_spawnmaxlevel = maxlevel_field->GetValue();
+
 		edit_spawn->setSize(new_spawnsize);
+		edit_spawn->setMinLevel(new_spawnminlevel);
+		edit_spawn->setMaxLevel(new_spawnmaxlevel);
 	}
 	EndModal(1);
 }

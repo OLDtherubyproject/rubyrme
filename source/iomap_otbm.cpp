@@ -973,6 +973,18 @@ bool IOMapOTBM::loadSpawns(Map& map, pugi::xml_document& doc)
 			continue;
 		}
 
+		int32_t minlevel = pugi::cast<int32_t>(spawnNode.attribute("minlevel").value());
+		if(minlevel < 1) {
+			warning("Couldn't read min level of spawn.. discarding spawn...");
+			continue;
+		}
+
+		int32_t maxlevel = pugi::cast<int32_t>(spawnNode.attribute("maxlevel").value());
+		if(maxlevel < 1) {
+			warning("Couldn't read max level of spawn.. discarding spawn...");
+			continue;
+		}
+
 		Tile* tile = map.getTile(spawnPosition);
 		if(tile && tile->spawn) {
 			warning("Duplicate spawn on position %d:%d:%d\n", tile->getX(), tile->getY(), tile->getZ());
@@ -980,6 +992,8 @@ bool IOMapOTBM::loadSpawns(Map& map, pugi::xml_document& doc)
 		}
 
 		Spawn* spawn = newd Spawn(radius);
+		spawn->setMinLevel(minlevel);
+		spawn->setMaxLevel(maxlevel);
 		if(!tile) {
 			tile = map.allocator(map.createTileL(spawnPosition));
 			map.setTile(spawnPosition, tile);
@@ -1471,6 +1485,12 @@ bool IOMapOTBM::saveSpawns(Map& map, pugi::xml_document& doc)
 
 		int32_t radius = spawn->getSize();
 		spawnNode.append_attribute("radius") = radius;
+
+		int32_t minlevel = spawn->getMinLevel();
+		spawnNode.append_attribute("minlevel") = minlevel;
+
+		int32_t maxlevel = spawn->getMaxLevel();
+		spawnNode.append_attribute("maxlevel") = maxlevel;
 
 		for(int32_t y = -radius; y <= radius; ++y) {
 			for(int32_t x = -radius; x <= radius; ++x) {
