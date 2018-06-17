@@ -340,8 +340,8 @@ void MapDrawer::DrawMap()
 							} else if(options.show_special_tiles && tile->isPZ()) {
 								r /= 2;
 								b /= 2;
-							} 
-							
+							}
+
 							if(options.show_special_tiles && tile->isCave()) {
 								r = 2;
 							}
@@ -1224,7 +1224,7 @@ void MapDrawer::BlitItem(int& draw_x, int& draw_y, const Position& pos, const It
 		}
 	}
 
-	if(options.show_hooks && (it.hookSouth || it.hookEast))
+	if(options.show_hooks && (it.hookSouth || it.hookEast) && zoom <= 3.0)
 		DrawHookIndicator(draw_x, draw_y, it);
 }
 
@@ -1408,7 +1408,7 @@ void MapDrawer::DrawTile(TileLocation* location)
 			r /= 2;
 			b /= 2;
 		}
-		
+
 		if(showspecial && tile->isCave()) {
 			r = 2;
 		}
