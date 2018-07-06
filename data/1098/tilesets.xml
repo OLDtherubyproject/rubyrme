@@ -156,7 +156,9 @@
 			<brush name="ramp"/>
 			<brush name="dirt ramp"/>
 			<brush name="bamboo ramp"/>
-			<brush name="grass"/>
+			<brush name="leafes"/>
+			<brush name="new grass"/>
+			<brush name="grass"/>			
 			<brush name="grass (alternate border)"/>
 			<brush name="grass open stone pile"/>
 			<brush name="grass closed stone pile"/>
@@ -205,6 +207,8 @@
 			<brush name="grass things"/>
 			<brush name="grass tufts"/>
 			<brush name="mossy stone"/>
+			<brush name="colored trees"/>
+			<brush name="different green trees"/>
 			<brush name="green trees"/>
 			<brush name="dead trees"/>
 			<brush name="trees"/>
@@ -242,6 +246,7 @@
 			<brush name="tree crown"/>
 			<brush name="branches"/>
 			<brush name="bamboo plant"/>
+			<brush name="red mushrooms"/>
 			<brush name="giant mushrooms"/>
 			<brush name="moldy giant mushrooms"/>
 			<brush name="moldy mushrooms"/>
@@ -289,6 +294,12 @@
 			
 			<brush name="demon oak"/>
 			<item fromid="8289" toid="8290"/>
+
+			<brush name="ores"/>
+			<brush name="ores (with plants)"/>
+			<brush name="ores (desert)"/>
+			<brush name="ores (rocks)"/>
+			<brush name="ores (ice)"/>
 		</doodad>
 		<raw>
 			<item fromid="386" toid="391"/>
@@ -361,6 +372,7 @@
 			<brush name="lava"/>
 			<brush name="melting ground"/>
 			<brush name="void"/>
+			<brush name="dark"/>
 		</terrain>
 	</tileset>
 	
@@ -404,6 +416,7 @@
 		<terrain>
 			<brush name="stone floor"/>
 			<brush name="cobblestone"/>
+			<brush name="beautiful cobblestone" />
 			<brush name="dark cobblestone"/>
 			<brush name="ugly cobblestone"/>
 			<brush name="grassy cobblestone"/>
@@ -459,6 +472,11 @@
 			<brush name="steel bars"/>
 			<brush name="steel rebar"/>
 		</terrain>
+
+		<raw>
+			<item fromid="27207" toid="27395"/>
+			<item fromid="27815" toid="27880"/>
+		</raw>
 	</tileset>
 	
 	<tileset name="Roofs">
@@ -1640,10 +1658,15 @@
 		</doodad>
 	</tileset>
 
-	<tileset name="Runes">
+	<tileset name="Pokeballs">
 		<items_and_raw>
-			<item fromid="2260" toid="2316"/>
-			<item fromid="8919"/>
+			<item fromid="27786" toid="27802"/>
+
+			<item fromid="27781" toid="27785"/>
+			<item fromid="28512" toid="28523"/>
+
+			<item fromid="27776" toid="27780"/>
+			<item fromid="27803" toid="27814"/>
 		</items_and_raw>
 	</tileset>
 

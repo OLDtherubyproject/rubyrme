@@ -428,8 +428,8 @@ bool ClientVersion::hasValidPaths() const
 		return false;
 	}
 
-	FileName dat_path = client_path.GetPath(wxPATH_GET_VOLUME | wxPATH_GET_SEPARATOR) + "Tibia.dat";
-	FileName spr_path = client_path.GetPath(wxPATH_GET_VOLUME | wxPATH_GET_SEPARATOR) + "Tibia.spr";
+	FileName dat_path = client_path.GetPath(wxPATH_GET_VOLUME | wxPATH_GET_SEPARATOR) + "Ruby.dat";
+	FileName spr_path = client_path.GetPath(wxPATH_GET_VOLUME | wxPATH_GET_SEPARATOR) + "Ruby.spr";
 	if(!dat_path.FileExists() || !spr_path.FileExists()) {
 		return false;
 	}
@@ -441,7 +441,7 @@ bool ClientVersion::hasValidPaths() const
 	// Peek the version of the files
 	FileReadHandle dat_file(static_cast<const char*>(dat_path.GetFullPath().mb_str()));
 	if(!dat_file.isOk()) {
-		wxLogError("Could not open Tibia.dat.");
+		wxLogError("Could not open Ruby.dat.");
 		return false;
 	}
 
@@ -451,7 +451,7 @@ bool ClientVersion::hasValidPaths() const
 
 	FileReadHandle spr_file(static_cast<const char*>(spr_path.GetFullPath().mb_str()));
 	if(!spr_file.isOk()) {
-		wxLogError("Could not open Tibia.spr.");
+		wxLogError("Could not open Ruby.spr.");
 		return false;
 	}
 
@@ -477,11 +477,11 @@ bool ClientVersion::loadValidPaths()
 	while(!hasValidPaths()) {
 		g_gui.PopupDialog(
 			"Error",
-			"Could not locate Tibia.dat and/or Tibia.spr, please navigate to your Tibia " +
+			"Could not locate Ruby.dat and/or Ruby.spr, please navigate to your Ruby " +
 				name + " installation folder.",
 			wxOK);
 
-		wxString dirHelpText("Select Tibia ");
+		wxString dirHelpText("Select Ruby ");
 		dirHelpText << name << " directory.";
 
 		wxDirDialog file_dlg(nullptr, dirHelpText, "", wxDD_DIR_MUST_EXIST);

@@ -7,6 +7,28 @@
 		<item id="6219" chance="10"/>
 	</brush>
 	
+	<brush name="colored trees" type="doodad" server_lookid="29508" draggable="true" on_blocking="false" thickness="12/100">
+		<item id="29504" chance="10"/>
+		<item id="29505" chance="10"/>
+		<item id="29506" chance="10"/>
+		<item id="29507" chance="10"/>
+		<item id="29508" chance="10"/>
+		<item id="29509" chance="10"/>
+		<item id="29510" chance="10"/>
+		<item id="29511" chance="10"/>
+	</brush>
+
+	<brush name="different green trees" type="doodad" server_lookid="29553" draggable="true" on_blocking="false" thickness="12/100">
+		<item id="29553" chance="10"/>
+		<item id="29554" chance="10"/>
+		<item id="29555" chance="10"/>
+		<item id="29556" chance="10"/>
+		<item id="29557" chance="10"/>
+		<item id="29558" chance="10"/>
+		<item id="29559" chance="10"/>
+		<item id="29560" chance="10"/>
+	</brush>
+
 	<brush name="green trees" type="doodad" server_lookid="2707" draggable="true" on_blocking="false" thickness="12/100">
 		<item id="2700" chance="10"/>
 		<item id="2701" chance="10"/>
@@ -849,6 +871,15 @@
 			<tile x="0" y="0" z="0">  <item id="4033"/> </tile>
 			<tile x="0" y="0" z="-1"> <item id="4034"/> </tile>
 		</composite>
+	</brush>
+
+	<brush name="red mushrooms" type="doodad" server_lookid="29498" draggable="true" on_blocking="false" thickness="12/100">
+		<item id="29498" chance="10"/>
+		<item id="29499" chance="10"/>
+		<item id="29500" chance="10"/>
+		<item id="29501" chance="10"/>
+		<item id="29502" chance="10"/>
+		<item id="29503" chance="10"/>
 	</brush>
 	
 	<brush name="giant mushrooms" type="doodad" server_lookid="4168" draggable="true" on_blocking="false" thickness="12/100">
@@ -3852,6 +3883,41 @@
 			<tile x="0" y="1">  <item id="8291"/> </tile>
 			<tile x="1" y="1">  <item id="8775"/> </tile>
 		</composite>
+	</brush>
+
+	<brush name="ores" type="doodad" server_lookid="28832" draggable="true" on_blocking="false" thickness="12/100">
+		<item id="28831" chance="10"/>
+		<item id="28832" chance="10"/>
+		<item id="28833" chance="10"/>
+		<item id="28834" chance="10"/>
+	</brush>
+
+	<brush name="ores (with plants)" type="doodad" server_lookid="28828" draggable="true" on_blocking="false" thickness="12/100">
+		<item id="28827" chance="10"/>
+		<item id="28828" chance="10"/>
+		<item id="28829" chance="10"/>
+		<item id="28830" chance="10"/>
+	</brush>
+
+	<brush name="ores (desert)" type="doodad" server_lookid="28824" draggable="true" on_blocking="false" thickness="12/100">
+		<item id="28823" chance="10"/>
+		<item id="28824" chance="10"/>
+		<item id="28825" chance="10"/>
+		<item id="28826" chance="10"/>
+	</brush>
+
+	<brush name="ores (rocks)" type="doodad" server_lookid="28820" draggable="true" on_blocking="false" thickness="12/100">
+		<item id="28819" chance="10"/>
+		<item id="28820" chance="10"/>
+		<item id="28821" chance="10"/>
+		<item id="28822" chance="10"/>
+	</brush>
+
+	<brush name="ores (ice)" type="doodad" server_lookid="28816" draggable="true" on_blocking="false" thickness="12/100">
+		<item id="28815" chance="10"/>
+		<item id="28816" chance="10"/>
+		<item id="28817" chance="10"/>
+		<item id="28818" chance="10"/>
 	</brush>
 
 	<brush name="big footprint" type="doodad" server_lookid="3882" draggable="true" on_blocking="true" thickness="1/50">

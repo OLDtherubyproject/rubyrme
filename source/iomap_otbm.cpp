@@ -88,8 +88,8 @@ bool Item::readItemAttribute_OTBM(const IOMap& maphandle, OTBM_ItemAttribute att
 {
 	switch (attr) {
 		case OTBM_ATTR_COUNT: {
-			uint8_t subtype;
-			if(!stream->getU8(subtype)) {
+			uint16_t subtype;
+			if(!stream->getU16(subtype)) {
 				return false;
 			}
 			setSubtype(subtype);
@@ -181,7 +181,7 @@ void Item::serializeItemAttributes_OTBM(const IOMap& maphandle, NodeFileWriteHan
 		const ItemType& iType = g_items[id];
 		if(iType.stackable || iType.isSplash() || iType.isFluidContainer()) {
 			stream.addU8(OTBM_ATTR_COUNT);
-			stream.addU8(getSubtype());
+			stream.addU16(getSubtype());
 		}
 	}
 

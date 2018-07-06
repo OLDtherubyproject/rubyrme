@@ -2216,4 +2216,64 @@
 		<borderitem edge="dse" item="12180"/>
 	</border>
 
+	<border id="226"> -- new grass border --
+		<borderitem edge="n"   item="29437"/>
+		<borderitem edge="e"   item="29438"/>
+		<borderitem edge="s"   item="29436"/>
+		<borderitem edge="w"   item="29439"/>
+		<borderitem edge="cnw" item="29443"/>
+		<borderitem edge="cne" item="29442"/>
+		<borderitem edge="csw" item="29441"/>
+		<borderitem edge="cse" item="29440"/>
+		<borderitem edge="dnw" item="29447"/>
+		<borderitem edge="dne" item="29446"/>
+		<borderitem edge="dsw" item="29445"/>
+		<borderitem edge="dse" item="29444"/>
+	</border>
+
+	<border id="227"> -- leaf border --
+		<borderitem edge="n"   item="29458"/>
+		<borderitem edge="e"   item="29459"/>
+		<borderitem edge="s"   item="29461"/>
+		<borderitem edge="w"   item="29463"/>
+		<borderitem edge="cnw" item="29443"/>
+		<borderitem edge="cne" item="29442"/>
+		<borderitem edge="csw" item="29441"/>
+		<borderitem edge="cse" item="29440"/>
+		<borderitem edge="dnw" item="29447"/>
+		<borderitem edge="dne" item="29446"/>
+		<borderitem edge="dsw" item="29445"/>
+		<borderitem edge="dse" item="29444"/>
+	</border>
+
+	<border id="228"> -- dark border --
+		<borderitem edge="n"   item="29295"/>
+		<borderitem edge="e"   item="29296"/>
+		<borderitem edge="s"   item="29294"/>
+		<borderitem edge="w"   item="29297"/>
+		<borderitem edge="cnw" item="29301"/>
+		<borderitem edge="cne" item="29300"/>
+		<borderitem edge="csw" item="29299"/>
+		<borderitem edge="cse" item="29298"/>
+		<borderitem edge="dnw" item="29305"/>
+		<borderitem edge="dne" item="29304"/>
+		<borderitem edge="dsw" item="29303"/>
+		<borderitem edge="dse" item="29302"/>
+	</border>
+
+	<border id="229"> -- gray pavement border --
+		<borderitem edge="n"   item="27194"/>
+		<borderitem edge="e"   item="27195"/>
+		<borderitem edge="s"   item="27197"/>
+		<borderitem edge="w"   item="27196"/>
+		<borderitem edge="cnw" item="27199"/>
+		<borderitem edge="cne" item="27198"/>
+		<borderitem edge="csw" item="27200"/>
+		<borderitem edge="cse" item="27201"/>
+		<borderitem edge="dnw" item="27203"/>
+		<borderitem edge="dne" item="27205"/>
+		<borderitem edge="dsw" item="27204"/>
+		<borderitem edge="dse" item="27205"/>
+	</border>
+
 </materials>

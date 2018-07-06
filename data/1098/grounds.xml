@@ -7,7 +7,41 @@
 	<brush name="void" type="ground" server_lookid="100" z-order="95">
 		<item id="100" chance="10"/>
 	</brush>
+
+	<brush name="dark" type="ground" server_lookid="29286" z-order="3530">
+		<item id="29286" chance="10"/>
+
+		<border align="outer" id="228"/>
+	</brush>
+
+	<brush name="leafes" type="ground" server_lookid="29456" z-order="3550">
+		<item id="29456" chance="10"/>
+
+		<border align="outer" id="227"/>
+		<border align="outer" to="none" id="1"/>
+	</brush>
 	
+	<brush name="new grass" type="ground" server_lookid="29422" z-order="3530">
+		<item id="29422" chance="25"/>
+		<item id="29423" chance="25"/>
+		<item id="29424" chance="25"/>
+		<item id="29425" chance="25"/>
+
+		<item id="29426" chance="2"/>
+		<item id="29427" chance="2"/>
+		<item id="29428" chance="2"/>
+		<item id="29429" chance="2"/>
+		<item id="29430" chance="2"/>
+		<item id="29431" chance="2"/>
+		<item id="29432" chance="2"/>
+		<item id="29433" chance="2"/>
+		<item id="29434" chance="2"/>
+		<item id="29435" chance="2"/>
+
+		<border align="outer" id="226"/>
+		<border align="outer" to="none" id="1"/>
+	</brush>
+
 	<brush name="grass" type="ground" server_lookid="4526" z-order="3500">
 		<item id="4526" chance="2500"/>
 		<item id="4527" chance="10"/>
@@ -655,7 +689,7 @@
 		<border align="outer" id="8"/>
 		<border align="inner" to="none" id="1"/>
 	</brush>
-	
+
 	<brush name="cave" type="ground" lookid="351" z-order="2000">
 		<item id="351" chance="6"/>
 		<item id="352" chance="1"/>
@@ -1095,6 +1129,10 @@
 	
 	<brush name="cobblestone" type="ground" server_lookid="724" z-order="100">
 		<item id="724" chance="1000"/>
+	</brush>
+
+	<brush name="beautiful cobblestone" type="ground" server_lookid="27206" z-order="100">
+		<item id="27206" chance="1000"/>
 	</brush>
 	
 	<brush name="dark cobblestone" type="ground" server_lookid="8423" z-order="1610">

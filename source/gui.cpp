@@ -329,30 +329,30 @@ bool GUI::LoadDataFiles(wxString& error, wxArrayString& warnings)
 
 	g_gui.gfx.client_version = getLoadedVersion();
 
-	FileName otfi_path = wxString(client_path.GetPath(wxPATH_GET_VOLUME | wxPATH_GET_SEPARATOR) + "Tibia.otfi");
+	FileName otfi_path = wxString(client_path.GetPath(wxPATH_GET_VOLUME | wxPATH_GET_SEPARATOR) + "Ruby.otfi");
 	if(!g_gui.gfx.loadOTFI(otfi_path, error, warnings)) {
-		error = "Couldn't load tibia.otfi: " + error;
+		error = "Couldn't load Ruby.otfi: " + error;
 		g_gui.DestroyLoadBar();
 		UnloadVersion();
 		return false;
 	}
 
 	g_gui.CreateLoadBar("Loading data files");
-	g_gui.SetLoadDone(0, "Loading Tibia.dat ...");
-	FileName dat_path = wxString(client_path.GetPath(wxPATH_GET_VOLUME | wxPATH_GET_SEPARATOR) + "Tibia.dat");
+	g_gui.SetLoadDone(0, "Loading Ruby.dat ...");
+	FileName dat_path = wxString(client_path.GetPath(wxPATH_GET_VOLUME | wxPATH_GET_SEPARATOR) + "Ruby.dat");
 
 	if(!g_gui.gfx.loadSpriteMetadata(dat_path, error, warnings)) {
-		error = "Couldn't load tibia.dat: " + error;
+		error = "Couldn't load Ruby.dat: " + error;
 		g_gui.DestroyLoadBar();
 		UnloadVersion();
 		return false;
 	}
 
-	FileName spr_path = wxString(client_path.GetPath(wxPATH_GET_VOLUME | wxPATH_GET_SEPARATOR) + "Tibia.spr");
+	FileName spr_path = wxString(client_path.GetPath(wxPATH_GET_VOLUME | wxPATH_GET_SEPARATOR) + "Ruby.spr");
 
-	g_gui.SetLoadDone(10, "Loading Tibia.spr ...");
+	g_gui.SetLoadDone(10, "Loading Ruby.spr ...");
 	if(!g_gui.gfx.loadSpriteData(spr_path.GetFullPath(), error, warnings)) {
-		error = "Couldn't load tibia.spr: " + error;
+		error = "Couldn't load Ruby.spr: " + error;
 		g_gui.DestroyLoadBar();
 		UnloadVersion();
 		return false;
@@ -1236,15 +1236,15 @@ void GUI::SetTitle(wxString title)
 #endif
 #ifdef __EXPERIMENTAL__
 	if(title != "") {
-		g_gui.root->SetTitle(title << " - Remere's Map Editor BETA" << TITLE_APPEND);
+		g_gui.root->SetTitle(title << " - Remere's Map Editor for The Ruby Server BETA" << TITLE_APPEND);
 	} else {
-		g_gui.root->SetTitle(wxString("Remere's Map Editor BETA") << TITLE_APPEND);
+		g_gui.root->SetTitle(wxString("Remere's Map Editor for The Ruby Server BETA") << TITLE_APPEND);
 	}
 #else
 	if(title != "") {
-		g_gui.root->SetTitle(title << " - Remere's Map Editor" << TITLE_APPEND);
+		g_gui.root->SetTitle(title << " - Remere's Map Editor for The Ruby Server" << TITLE_APPEND);
 	} else {
-		g_gui.root->SetTitle(wxString("Remere's Map Editor") << TITLE_APPEND);
+		g_gui.root->SetTitle(wxString("Remere's Map Editor for The Ruby Server") << TITLE_APPEND);
 	}
 #endif
 }
